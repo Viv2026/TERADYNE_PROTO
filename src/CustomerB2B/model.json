@@ -1,0 +1,262 @@
+{
+    "dataHubModelSchemaVersion": "1.1.0",
+    "dataHubModel": {
+        "qualifiedName": "CustomerB2B",
+        "label": "Customer B2B",
+        "modelConfiguration": {
+            "type": "POSTGRESQL"
+        },
+        "retentionPolicy": {
+            "deletionsDuration": 0,
+            "deletionsType": "FOREVER",
+            "deletionsUnit": "DAY",
+            "historyDuration": 0,
+            "historyType": "FOREVER",
+            "historyUnit": "DAY",
+            "sourceDataDuration": 0,
+            "sourceDataType": "FOREVER",
+            "sourceDataUnit": "DAY",
+            "sourceErrorsDuration": 0,
+            "sourceErrorsType": "FOREVER",
+            "sourceErrorsUnit": "DAY"
+        },
+        "applications": [
+            {
+                "qualifiedName": "CustomerB2B.applications.DefaultApplication",
+                "activitiesSectionEnabled": true,
+                "applicationTitle": "Default Application",
+                "avatarImageUrl": "images://default/default-data-app-icon.svg",
+                "certificationQueueEnabled": true,
+                "coverImageUrl": "images://default/cover.png",
+                "dashboardEnabled": true,
+                "dashboardScope": "MODEL",
+                "defaultAction": "CustomerB2B.applications.DefaultApplication.Root",
+                "entitiesListEnabled": true,
+                "errorsNavigationEnabled": true,
+                "favIcon": "images://default/dm-favicon.svg",
+                "historyBrowsingEnabled": false,
+                "historyBrowsingRequiredRole": "",
+                "homeSectionEnabled": true,
+                "lineageEnabled": true,
+                "logoUrl": "images://default/semarchy-logo-navy.svg",
+                "visibility": "VISIBLE",
+                "label": "Default Application",
+                "sortStrategy": "POSITION",
+                "documentationConfig": {
+                    "documentation": ""
+                },
+                "globalSearchConfig": {
+                    "displaySearchForDropdown": true,
+                    "sortBoViewsAlphabetically": true
+                },
+                "navigationConfig": {
+                    "navigationGroups": [
+                        {
+                            "qualifiedName": "CustomerB2B.applications.DefaultApplication.RootFolder",
+                            "_type": "FolderNavigationGroup",
+                            "dividerVisible": false,
+                            "labelVisible": false,
+                            "position": 0,
+                            "underlyingFolder": "CustomerB2B.applications.DefaultApplication.Root"
+                        }
+                    ]
+                },
+                "abstractAppActions": [
+                    {
+                        "qualifiedName": "CustomerB2B.applications.DefaultApplication.Root",
+                        "_type": "FolderAction",
+                        "useCustomLabel": true,
+                        "image": "images://mdi/folder.svg",
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT",
+                        "label": "Root Folder"
+                    },
+                    {
+                        "qualifiedName": "CustomerB2B.applications.DefaultApplication.Root.GlobalSearch",
+                        "posInFolder": 0,
+                        "parentFolder": "CustomerB2B.applications.DefaultApplication.Root",
+                        "_type": "GlobalSearchAction",
+                        "useCustomLabel": false,
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT"
+                    },
+                    {
+                        "qualifiedName": "CustomerB2B.applications.DefaultApplication.Root.MyTasks",
+                        "posInFolder": 1,
+                        "parentFolder": "CustomerB2B.applications.DefaultApplication.Root",
+                        "_type": "MyTasksAction",
+                        "useCustomLabel": false,
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT",
+                        "badgeVisible": false
+                    },
+                    {
+                        "qualifiedName": "CustomerB2B.applications.DefaultApplication.Root.Entities",
+                        "posInFolder": 2,
+                        "parentFolder": "CustomerB2B.applications.DefaultApplication.Root",
+                        "_type": "BrowseEntitiesFolderAction",
+                        "useCustomLabel": false,
+                        "imageAlign": "MIDDLE_CENTER",
+                        "imageMode": "FIT",
+                        "lineageEnabled": true
+                    }
+                ]
+            }
+        ],
+        "complexTypes": [],
+        "sqlFunctions": [],
+        "databaseViews": [],
+        "enricherCaches": [],
+        "lovTypes": [],
+        "modelDiagrams": [],
+        "modelEditionVariables": [],
+        "modelJobs": [],
+        "modelPrivGrants": [
+            {
+                "qualifiedName": "CustomerB2B.model_priv_grants.semarchyAdmin",
+                "allowApiPublishingAsUser": true,
+                "dataAdminRole": true,
+                "integrationWsRole": true,
+                "label": "semarchy Admin",
+                "roleName": "semarchyAdmin"
+            }
+        ],
+        "namedQueries": [],
+        "publishers": [],
+        "referenceRels": [],
+        "userDefinedTypes": [],
+        "workflows": [],
+        "entities": [
+            {
+                "qualifiedName": "CustomerB2B.entities.Customer.Customer",
+                "dataEntryAllowed": true,
+                "historizeGolden": false,
+                "historizeMaster": false,
+                "description": "",
+                "documentation": "",
+                "enableDelete": true,
+                "entityType": "FUZZY_MATCHED",
+                "iconUrl": "images://mdi/book.svg",
+                "label": "Customer",
+                "physicalTableName": "CUSTOMER",
+                "pluralLabel": "Customer",
+                "pkAttributes": [
+                    {
+                        "qualifiedName": "CustomerB2B.entities.Customer.Customer.CustomerID",
+                        "_type": "PKAttribute",
+                        "abstractAtomicType": "LongInteger",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "mandatory": true,
+                        "multiValued": false,
+                        "physicalColName": "CUSTOMER_ID",
+                        "valueSeparator": "",
+                        "fuzzyMatchedEntityGoldenIdGenerationType": "SEQUENCE",
+                        "fuzzyMatchedEntityGoldenIdSequenceStartsWith": 1,
+                        "idGenerationType": "SEQUENCE",
+                        "idSequenceStartsWith": 1,
+                        "label": "Customer ID",
+                        "precision": 38,
+                        "searchable": true
+                    }
+                ],
+                "atomicAttributes": [
+                    {
+                        "qualifiedName": "CustomerB2B.entities.Customer.Customer.CustomerName",
+                        "_type": "AtomicAttribute",
+                        "abstractAtomicType": "String",
+                        "goldenAttribute": true,
+                        "i18ned": false,
+                        "lovValidationScope": "NONE",
+                        "mandatory": false,
+                        "mandatoryValidationLabel": "",
+                        "mandatoryValidationScope": "NONE",
+                        "multiValued": false,
+                        "physicalColName": "CUSTOMER_NAME",
+                        "valueSeparator": "",
+                        "label": "Customer Name",
+                        "length": 255,
+                        "searchable": true
+                    }
+                ],
+                "complexAttributes": [],
+                "matcher": {
+                    "_type": "SemQLMatcher",
+                    "qualifiedName": "CustomerB2B.entities.Customer.Customer.Matcher",
+                    "autoConfirmGoldenThreshold": 99,
+                    "autoConfirmSingletons": false,
+                    "mergeThresholdMergingConfirmed": 0,
+                    "mergeThresholdMergingConfirmedWithNewMasters": 0,
+                    "mergeThresholdMergingConfirmedWithUnconfirmed": 0,
+                    "mergeThresholdMergingUnconfirmed": 0,
+                    "mergeThresholdMergingUnconfirmedWithNewMasters": 0,
+                    "mergeThresholdNewGroup": 0,
+                    "mergeThresholdRemergingPreviouslySplit": 100,
+                    "useMultiIterationGrouping": true,
+                    "useTransitiveMatchScore": true,
+                    "description": "CustomerSemQLMatcher",
+                    "matchRules": [
+                        {
+                            "qualifiedName": "CustomerB2B.entities.Customer.Customer.Matcher.NewRule",
+                            "condition": "Record1.CustomerName='Bibhuti'",
+                            "matchScore": 100,
+                            "label": "NewRuleLabel",
+                            "usingMatchOn": false
+                        }
+                    ]
+                },
+                "abstractRowCheckConstraints": [],
+                "actionSets": [],
+                "businessObjectViews": [],
+                "collections": [],
+                "displayCards": [
+                    {
+                        "qualifiedName": "CustomerB2B.entities.Customer.display_cards.CustomerDisplayCard",
+                        "avatarImageValueInterpreter": "LITERAL",
+                        "default": true,
+                        "primaryImageFallbackValueInterpreter": "LITERAL",
+                        "primaryImageValueInterpreter": "LITERAL",
+                        "avatarImageAlign": "MIDDLE_CENTER",
+                        "avatarImageMode": "FIT",
+                        "avatarImageSourceType": "URL",
+                        "primaryImageAlign": "MIDDLE_CENTER",
+                        "primaryImageFallbackSourceType": "URL",
+                        "primaryImageMode": "FIT",
+                        "primaryImageSourceType": "URL",
+                        "primaryTextExpression": "CustomerName || '  , ' || CustomerID",
+                        "supportingTextExpression": "CustomerID"
+                    }
+                ],
+                "dupsManagers": [],
+                "enrichers": [],
+                "forms": [],
+                "searchForms": [],
+                "steppers": [],
+                "survivorshipRules": [
+                    {
+                        "qualifiedName": "CustomerB2B.entities.Customer.survivorship_rules.DefaultRule",
+                        "_type": "StandardSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Default Rule",
+                        "consolidationStrategy": "CUSTOM_RANKING",
+                        "description": "",
+                        "documentation": "",
+                        "defaultRule": true,
+                        "overrideStrategy": "NO_OVERRIDE"
+                    },
+                    {
+                        "qualifiedName": "CustomerB2B.entities.Customer.survivorship_rules.IdSurvivorshipRule",
+                        "_type": "IdSurvivorshipRule",
+                        "consolidationSkipNulls": false,
+                        "label": "Id Survivorship Rule",
+                        "consolidationStrategy": "CUSTOM_RANKING",
+                        "description": "",
+                        "documentation": ""
+                    }
+                ],
+                "uniqueKeys": [],
+                "fuzzyLookupRules": []
+            }
+        ]
+    }
+}

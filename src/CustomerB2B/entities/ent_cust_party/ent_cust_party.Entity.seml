@@ -1,0 +1,85 @@
+_package: CustomerB2B.entities.ent_cust_party
+_type: Entity
+_name: ent_cust_party
+label: ent_cust_party
+pluralLabel: ent_cust_party
+entityType: FUZZY_MATCHED
+physicalTableName: ENT_CUST_PARTY
+iconUrl: images://mdi/book.svg
+description: ""
+documentation: ""
+historizeGolden: false
+historizeMaster: false
+enableDelete: true
+attributes:
+  - _type: EntityAttribute
+    _name: ent_cust_party_id
+    label: ent_cust_party ID
+    physicalName: ENT_CUST_PARTY_ID
+    dataType: LongInteger
+    precision: 38
+    mandatory: true
+    mandatoryValidationScope: NONE
+    searchable: true
+  - _type: EntityAttribute
+    _name: ent_cust_party_nm
+    label: ent_cust_party Name
+    physicalName: ENT_CUST_PARTY_NAME
+    dataType: String
+    length: 100
+    mandatory: true
+    mandatoryValidationScope: NONE
+    searchable: true
+  - _type: EntityAttribute
+    _name: ent_cust_party_taxid
+    label: ent_cust_party TaxID
+    physicalName: ENT_CUST_PARTY_TAXID
+    dataType: LongInteger
+    precision: 38
+    mandatory: false
+    searchable: false
+  - _type: EntityAttribute
+    _name: ent_cust_party_addr
+    label: ent_cust_party Address
+    physicalName: ENT_CUST_PARTY_ADDR
+    dataType: String
+    length: 255
+    mandatory: false
+    searchable: true
+  - _type: EntityAttribute
+    _name: ent_cust_party_fk
+    label: ent_cust_party Foreign Key
+    physicalName: ENT_CUST_PARTY_FK
+    dataType: LongInteger
+    precision: 38
+    mandatory: false
+    searchable: true
+sourceIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+primaryKey: CustomerB2B.entities.ent_cust_party.ent_cust_party.ent_cust_party_id
+goldenIdGeneration:
+  mode: SEQUENCE
+  startWith: 1
+matcher:
+  _type: SemQLMatcher
+  _name: Matcher
+  description: ent_cust_partySemQLMatcher
+  matchRules:
+    - _type: SemQLMatchRule
+      _name: NewRule
+      label: NewRuleLabel
+      condition: any
+      matchScore: 100
+      usingMatchOn: false
+  useTransitiveMatchScore: true
+  useMultiIterationGrouping: true
+  mergeThresholdNewGroup: 0
+  mergeThresholdMergingUnconfirmed: 0
+  mergeThresholdMergingConfirmed: 0
+  mergeThresholdMergingConfirmedWithUnconfirmed: 0
+  mergeThresholdMergingUnconfirmedWithNewMasters: 0
+  mergeThresholdMergingConfirmedWithNewMasters: 0
+  mergeThresholdRemergingPreviouslySplit: 100
+  autoConfirmGoldenThreshold: 99
+  autoConfirmSingletons: false

@@ -1,0 +1,17 @@
+_package: CustomerB2B.entities.Customer.display_cards
+_type: DisplayCard
+_name: CustomerDisplayCard
+entity: CustomerB2B.entities.Customer.Customer
+default: true
+primaryTextExpression: CustomerName || '  , ' || CustomerID
+supportingTextExpression: CustomerID
+primaryImageValueInterpreter: LITERAL
+primaryImageSourceType: URL
+primaryImageAlign: MIDDLE_CENTER
+primaryImageMode: FIT
+primaryImageFallbackValueInterpreter: LITERAL
+primaryImageFallbackSourceType: URL
+avatarImageValueInterpreter: LITERAL
+avatarImageSourceType: URL
+avatarImageAlign: MIDDLE_CENTER
+avatarImageMode: FIT
