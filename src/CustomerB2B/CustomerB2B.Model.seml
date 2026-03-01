@@ -1,6 +1,0 @@
-_type: Model
-_package: CustomerB2B
-_name: CustomerB2B
-label: Customer B2B
-modelConfiguration:
-  type: POSTGRESQL

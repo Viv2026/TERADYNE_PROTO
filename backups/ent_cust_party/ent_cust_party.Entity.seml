@@ -69,7 +69,7 @@ matcher:
     - _type: SemQLMatchRule
       _name: NewRule
       label: NewRuleLabel
-      condition: any
+      condition: Record1.ent_cust_party_nm != null
       matchScore: 100
       usingMatchOn: false
   useTransitiveMatchScore: true
