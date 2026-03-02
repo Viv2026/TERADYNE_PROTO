@@ -1,0 +1,6 @@
+_type: Model
+_package: CustomerB2C
+_name: CustomerB2C
+label: Customer B2C
+modelConfiguration:
+  type: POSTGRESQL

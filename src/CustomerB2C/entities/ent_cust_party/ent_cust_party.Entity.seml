@@ -1,4 +1,4 @@
-_package: CustomerB2B.entities.ent_cust_party
+_package: CustomerB2C.entities.ent_cust_party
 _type: Entity
 _name: ent_cust_party
 label: ent_cust_party
@@ -57,7 +57,7 @@ attributes:
 sourceIdGeneration:
   mode: SEQUENCE
   startWith: 1
-primaryKey: CustomerB2B.entities.ent_cust_party.ent_cust_party.ent_cust_party_id
+primaryKey: "CustomerB2C.entities.ent_cust_party.ent_cust_party.ent_cust_party_id"
 goldenIdGeneration:
   mode: SEQUENCE
   startWith: 1
@@ -67,10 +67,10 @@ matcher:
   description: ent_cust_partySemQLMatcher
   matchRules:
     - _type: SemQLMatchRule
-      _name: NewRule
-      label: NewRuleLabel
-      condition: Record1.ent_cust_party_nm != null
-      matchScore: 100
+      _name: DefaultRule
+      label: DefaultRuleLabel
+      condition: Record1.ent_cust_party_id = Record2.ent_cust_party_id
+      matchScore: 1
       usingMatchOn: false
   useTransitiveMatchScore: true
   useMultiIterationGrouping: true
